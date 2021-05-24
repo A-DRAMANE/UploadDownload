@@ -7,19 +7,24 @@ function Upload() {
     return (
         <div className="upload">
     
-          <div className="">
+          <div className="upload-tile">
             <h1>Upload your image</h1>
             <h2>File should be Jpeg, Png</h2>
           </div>
     
           <div className="drag-drop">
-            <img src={image}/>
+            <img src={image} alt="drop-drag"/>
             <h3>Drag & Drop your image here</h3>
           </div>
     
-          <div className="">
+          <div className="upload-bottom">
             <h1>or</h1>
-            <button>Choose a file</button>
+            <input 
+              type="file" 
+              placeholder="Choose a file"
+              accept=".jpg, .jpeg, .png"
+             />
+             
           </div>
     
         </div>
