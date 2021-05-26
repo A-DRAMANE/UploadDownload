@@ -77,7 +77,7 @@
   letter-spacing: -0.035em;
   color: #bdbdbd;
 }
-.upload-bottom > input {
+.upload-bottom > button {
   width: 101px;
   height: 31.98px;
   background: #2f80ed;

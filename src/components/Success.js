@@ -11,19 +11,23 @@ function Success() {
     if (!getUrl()) {
       history.push("/");
     }
+
+    function copyText(htmlElement) {
+        if(!htmlElement){
+            return false;
+        }
+        let elementText = htmlElement.innerText;
+        let inputElement = document.createElement('input');
+        inputElement.setAttribute('value',elementText);
+        document.body.appendChild(inputElement);
+        inputElement.select();
+        document.execCommand('copy');
+        inputElement.parentNode.removeChild(inputElement);
+    }
+
     const handleCopy = () =>{
-        /* Get the text field */
-        //const copyText = document.querySelector(".myInput");
 
-        /* Select the text field */
-        getUrl().select();
-        getUrl().setSelectionRange(0, 99999); /* For mobile devices */
-
-        /* Copy the text inside the text field */
-        document.execCommand("copy");
-
-        /* Alert the copied text */
-        alert("Copied the text: " + getUrl().value);
+        copyText(document.querySelector(".myInput"))
     }
     return (
         <div className="upload">
